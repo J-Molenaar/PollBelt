@@ -1,0 +1,19 @@
+<h3> Enter Your Name:</h3>
+<fieldset>
+
+  <div id="Registration" *ngIf="!currentUser">
+    <form #regForm="ngForm" (submit)="login(userName)">
+      Name:<input
+        type="text"
+        name="userName"
+        [(ngModel)]="userName"
+      ><br><br>
+      <input
+        type="submit"
+        value="Login"
+        [disabled]="!regForm.form.valid"
+      ><br><br>
+    </form>
+  </div>
+
+</fieldset>
